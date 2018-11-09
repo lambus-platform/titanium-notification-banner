@@ -13,7 +13,7 @@ import {
   NotificationBanner, 
   NotificationBannerType, 
   NotificationBannerPosition 
-} from 'notification-banner';
+} from 'titanium-notification-banner';
 
 new NotificationBanner({
   title: 'Titanium rocks!',
