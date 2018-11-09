@@ -1,0 +1,24 @@
+{
+  "name": "titanium-notification-banner",
+  "version": "1.0.0",
+  "description": "A lightweight notification banner for Axway Titanium.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hansemannn@github.com/lambus-platform/titanium-notification-banner.git"
+  },
+  "keywords": [
+    "titanium",
+    "banner",
+    "native"
+  ],
+  "author": "Hans Knöchel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lambus-platform/titanium-notification-banner/issues"
+  },
+  "homepage": "https://github.com/lambus-platform/titanium-notification-banner#readme"
+}
