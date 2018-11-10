@@ -2,6 +2,8 @@
 
 A lightweight notification banner for Titanium.
 
+<img src="example.gif" alt="Example Video" />
+
 ## Requirements
 
 - [x] ES6+ enabled in the tiapp.xml (`<transpile>true</transpile>`)
@@ -17,7 +19,7 @@ import {
   NotificationBanner, 
   NotificationBannerType, 
   NotificationBannerPosition 
-} from 'notification-banner';
+} from 'titanium-notification-banner';
 
 new NotificationBanner({
   title: 'Titanium rocks!',
