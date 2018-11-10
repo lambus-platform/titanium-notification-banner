@@ -2,6 +2,8 @@
 
 A lightweight notification banner for Titanium.
 
+<img src="example.gif" alt="Example Video" />
+
 ## Requirements
 
 - [x] ES6+ enabled in the tiapp.xml (`<transpile>true</transpile>`)
