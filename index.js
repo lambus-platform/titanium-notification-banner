@@ -13,10 +13,6 @@ const NotificationBannerPosition = {
 	BOTTOM: 'bottom'
 };
 
-const NotificationBannerSizing = {
-	HEIGHT: 46
-};
-
 class NotificationBanner {
 
 	constructor(opts = {}) {
@@ -32,21 +28,27 @@ class NotificationBanner {
 
 		this.type = opts.type || NotificationBannerType.INFO;
 		this.position = opts.position || NotificationBannerPosition.BOTTOM;
+		this.bannerHeight = this._calculateHeight();
 
 		this.bannerView = Ti.UI.createView({
 			backgroundColor: this.type,
-			height: NotificationBannerSizing.HEIGHT,
+			height: this.bannerHeight,
 			viewShadowColor: 'rgba(0, 0, 0, 0.3)',
 			viewShadowRadius: 7,
 			viewShadowOffset: { x: 0, y: -7 }
 		});
 		this.bannerView.addEventListener('click', () => { this._handleNotificationClick(); });
-		this.bannerView.add(Ti.UI.createLabel({
+
+		const label = Ti.UI.createLabel({
 			text: this.title,
 			color: '#fff'
-		}));
+		});
+		if (this._isiPhoneX()) {
+			label[this.position === 'top' ? 'bottom' : 'top'] = 15;
+		}
+		this.bannerView.add(label);
 
-		this.bannerView[this.position] = -(NotificationBannerSizing.HEIGHT);
+		this.bannerView[this.position] = -(this.bannerHeight);
 	}
 
 	show(opts = { dismissAfterDelay: undefined }) {
@@ -67,7 +69,7 @@ class NotificationBanner {
 
 	hide() {
 		const animationOptions = {};
-		animationOptions[this.position] = -(NotificationBannerSizing.HEIGHT);
+		animationOptions[this.position] = -(this.bannerHeight);
 
 		this.bannerView.animate(animationOptions, () => {
 			this.showing = false;
@@ -82,6 +84,29 @@ class NotificationBanner {
 	_handleNotificationClick() {
 		this.hide();
 	}
+
+	_calculateHeight() {
+		if (!this._isiPhoneX()) {
+			return 46
+		}
+
+		if (this.position === NotificationBannerPosition.TOP) {
+			return 84
+		}
+
+		return 66;
+	}
+
+	_isiPhoneX() {
+		if (Ti.Platform.osname !== 'iphone' && Ti.Platform.osname !== 'ipad') {
+			return; // TODO: Move to "safeAreaInsets" property in SDK 8.0.0+
+		}
+	
+		return ((Ti.Platform.displayCaps.platformWidth === 375 && Ti.Platform.displayCaps.platformHeight === 812)
+		|| (Ti.Platform.displayCaps.platformWidth === 414 && Ti.Platform.displayCaps.platformHeight === 896))
+		&& (Ti.Platform.displayCaps.logicalDensityFactor === 3 || Ti.Platform.displayCaps.logicalDensityFactor === 2);
+	};
+	
 }
 
 export {
