@@ -34,3 +34,4 @@ nbproject
 /android/java-sources.txt
 /ios/dist
 /android/.gradle
+ios/Carthage

@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+	google()
+	jcenter()
+	mavenCentral()
+}
+
+dependencies {
+    compile 'com.tapadoo.android:alerter:2.0.0'
+}
+
+configurations.all {
+  transitive = false
+}
+
+task getDeps(type: Copy) {
+	from sourceSets.main.runtimeClasspath
+	into 'lib/'
+}
