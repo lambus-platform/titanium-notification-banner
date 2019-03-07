@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="titanium">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Library/Application Support/Titanium/mobilesdk/osx/8.1.0/android/titanium.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
