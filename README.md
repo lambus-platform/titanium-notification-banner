@@ -1,47 +1,36 @@
 # Titanium Notification Banner
 
-A lightweight notification banner for Titanium.
-
-<img src="example.gif" alt="Example Video" />
+A notification banner for Titanium that uses full native API's to modally present messages.
 
 ## Requirements
 
-- [x] ES6+ enabled in the tiapp.xml (`<transpile>true</transpile>`)
-
-## Known Issues
-
-- If the notification banner is shown on a nodge-based device (e.g. iPhone X) and the container is not the window (e.g. a tab-group or navigation-window), the safe area insets should not be applied
+- [x] Titanium 7.0.0+
 
 ## Example
 
 ```js
-import { 
-  NotificationBanner, 
-  NotificationBannerType, 
-  NotificationBannerPosition 
-} from 'titanium-notification-banner';
+import NotificationBanner from 'ti.notificationbanner';
 
-new NotificationBanner({
+NotificationBanner.show({
   title: 'Titanium rocks!',
-  view: yourParentView,
-  type: NotificationBannerType.INFO,
-  position: NotificationBannerPosition.BOTTOM
-}).flash();
+  duration: 2,
+  
+  // iOS only for now
+  subtitle: 'It seriously does',
+  backgroundColor: 'green',
+});
 ```
 
 ## Methods
 
 - `show(options)`
-  - `options`: `dismissAfterDelay` (milliseconds)
-- `hide()`
-- `flash()`
 
 ## Properties
 
 - `title` (Required)
-- `view` (Required)
-- `type` (`NotificationBannerType`, one of `INFO`, `SUCCESS`, `WARN`, `DANGER` or `NONE`)
-- `position` (`NotificationBannerPosition`, one of `BOTTOM` or `TOP`)
+- `subtitle` (Optional)
+- `backgroundColor` (Optional)
+- `duration` (Optional)
 
 ## License 
 
