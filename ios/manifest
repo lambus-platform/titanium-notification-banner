@@ -2,17 +2,17 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.0
+version: 2.0.0
 apiversion: 2
 architectures: armv7 arm64 i386 x86_64
-description: titanium-notification-banner
+description: A lightweight notification banner for Titanium.
 author: Hans Knöchel
-license: Unlicensed
-copyright: Copyright (c) 2018 by Lambus GmbH i.G.
+license: MIT
+copyright: Copyright (c) 2019-present by Lambus GmbH
 
 # these should not be edited
 name: titanium-notification-banner
 moduleid: ti.notificationbanner
-guid: add9865d-fbad-468b-b044-ba9888544dcc
+guid: cccc9652-8055-43e0-a933-5cc76acd00be
 platform: iphone
-minsdk: 6.0.0
+minsdk: 8.0.0

@@ -20,6 +20,8 @@ import org.appcelerator.titanium.util.TiConvert;
 import android.app.Activity;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.support.design.widget.CoordinatorLayout;
+import android.view.ViewGroup;
 
 @Kroll.module(name="TitaniumNotificationBanner", id="ti.notificationbanner")
 public class TitaniumNotificationBannerModule extends KrollModule
@@ -49,15 +51,13 @@ public class TitaniumNotificationBannerModule extends KrollModule
 		int duration = args.getInt("duration");
 		String title = args.getString("title");
 		int color = TiConvert.toColor(args.getString("color"));
-		String action = args.getString("action") != null ? args.getString("action") : "OK";
 
 		final Snackbar snackbar = Snackbar.make(view, title, duration);
-		snackbar.setAction(action, new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				snackbar.dismiss();
-			}
-		});
+
+		ViewGroup.LayoutParams params = (ViewGroup.LayoutParams)snackbar.getView().getLayoutParams();
+		params.set(leftMargin, topMargin, rightMargin, bottomBar.height);
+		snack.getView().setLayoutParams(params);
+
 		if (color != -1) {
 			snackbar.setActionTextColor(color);
 		}
