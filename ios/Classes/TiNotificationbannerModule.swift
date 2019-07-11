@@ -36,6 +36,7 @@ class TiNotificationbannerModule: TiModule {
     let subtitle = params["subtitle"] as? String
     let duration = params["duration"] as? Double
     let image = params["image"] as? String
+    let titleColor = params["titleColor"] as? String
     let backgroundColor = params["backgroundColor"] as? String
     let onClickCallback = params["onClick"] as? KrollCallback
     
@@ -43,6 +44,10 @@ class TiNotificationbannerModule: TiModule {
       if let onClickCallback = onClickCallback {
         onClickCallback.call([[:]], thisObject: self)
       }
+    }
+    
+    if let titleColor = TiUtils.colorValue(titleColor) {
+      banner.textColor = titleColor.color
     }
 
     banner.dismissesOnTap = true

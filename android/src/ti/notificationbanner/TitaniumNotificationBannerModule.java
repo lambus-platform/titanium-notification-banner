@@ -9,11 +9,12 @@
 package ti.notificationbanner;
 
 import org.appcelerator.kroll.KrollDict;
+import org.appcelerator.kroll.KrollFunction;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
-
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiConfig;
+
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.util.TiConvert;
 
@@ -22,6 +23,8 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.CoordinatorLayout;
 import android.view.ViewGroup;
+
+import com.tapadoo.alerter.Alerter;
 
 @Kroll.module(name="TitaniumNotificationBanner", id="ti.notificationbanner")
 public class TitaniumNotificationBannerModule extends KrollModule
@@ -35,33 +38,34 @@ public class TitaniumNotificationBannerModule extends KrollModule
 	public void show(KrollDict args)
 	{
 		Activity currentActivity = TiApplication.getAppCurrentActivity();
-
-		if (currentActivity == null) {
-			Log.e(LCAT, "Activity is null");
-			return;
-		}
-
-		View view = currentActivity.getWindow().getDecorView().getRootView();
-
-		if (view == null) {
-			Log.e(LCAT, "Root view of activity is null");
-			return;
-		}
-
 		int duration = args.getInt("duration");
 		String title = args.getString("title");
+		String subtitle = args.getString("subtitle");
 		int color = TiConvert.toColor(args.getString("color"));
 
-		final Snackbar snackbar = Snackbar.make(view, title, duration);
+		final KrollFunction callback = (KrollFunction) args.get("onClick");
 
-		ViewGroup.LayoutParams params = (ViewGroup.LayoutParams)snackbar.getView().getLayoutParams();
-		params.set(leftMargin, topMargin, rightMargin, bottomBar.height);
-		snack.getView().setLayoutParams(params);
-
-		if (color != -1) {
-			snackbar.setActionTextColor(color);
+		if (currentActivity == null) {
+			Log.e(LCAT, "Cannot option current activity. Try calling this method after your window is opened");
+			return;
 		}
-		snackbar.show();
+
+		Alerter.create(currentActivity)
+			.setTitle(title)
+			.setText(subtitle)
+			.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					KrollDict dict = new KrollDict();
+					callback.call(getKrollObject(), dict);
+				}
+			})
+			.show();
 	}
+
+	@Kroll.method
+	public void hide() {
+		Alerter.hide();
+	} 
 }
 
