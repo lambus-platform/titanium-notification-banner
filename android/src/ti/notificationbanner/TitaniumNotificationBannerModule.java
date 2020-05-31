@@ -41,7 +41,12 @@ public class TitaniumNotificationBannerModule extends KrollModule
 		int duration = args.getInt("duration");
 		String title = args.getString("title");
 		String subtitle = args.getString("subtitle");
-		int color = TiConvert.toColor(args.getString("color"));
+		
+		if (subtitle == null) {
+			subtitle = "";
+		}
+		
+		int color = TiConvert.toColor(args.getString("backgroundColor"));
 
 		final KrollFunction callback = (KrollFunction) args.get("onClick");
 
@@ -53,6 +58,8 @@ public class TitaniumNotificationBannerModule extends KrollModule
 		Alerter.create(currentActivity)
 			.setTitle(title)
 			.setText(subtitle)
+			.setDuration(duration*1000) //iOS parity. Alerter expects miliseconds
+			.setBackgroundColorInt(color)
 			.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
