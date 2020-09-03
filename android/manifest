@@ -15,4 +15,4 @@ name: titanium-notification-banner
 moduleid: ti.notificationbanner
 guid: add9865d-fbad-468b-b044-ba9888544dcc
 platform: android
-minsdk: 7.5.0.GA
+minsdk: 9.0.0.GA
