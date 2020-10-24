@@ -19,10 +19,7 @@ import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.util.TiConvert;
 
 import android.app.Activity;
-import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.support.design.widget.CoordinatorLayout;
-import android.view.ViewGroup;
 
 import com.tapadoo.alerter.Alerter;
 
@@ -39,9 +36,9 @@ public class TitaniumNotificationBannerModule extends KrollModule
 	{
 		Activity currentActivity = TiApplication.getAppCurrentActivity();
 		int duration = args.getInt("duration");
-		String title = args.getString("title");
-		String subtitle = args.getString("subtitle");
-		int color = TiConvert.toColor(args.getString("color"));
+		String title = args.optString("title", "");
+		String subtitle = args.optString("subtitle", "");
+		String bgColor = args.optString("backgroundColor", "");
 
 		final KrollFunction callback = (KrollFunction) args.get("onClick");
 
@@ -50,7 +47,7 @@ public class TitaniumNotificationBannerModule extends KrollModule
 			return;
 		}
 
-		Alerter.create(currentActivity)
+		Alerter alerter = Alerter.create(currentActivity)
 			.setTitle(title)
 			.setText(subtitle)
 			.setOnClickListener(new View.OnClickListener() {
@@ -59,13 +56,22 @@ public class TitaniumNotificationBannerModule extends KrollModule
 					KrollDict dict = new KrollDict();
 					callback.call(getKrollObject(), dict);
 				}
-			})
-			.show();
+			});
+
+		if (duration > 0) {
+			alerter.setDuration(duration * 1000);
+		}
+
+		if (bgColor != "") {
+			int backgroundColor = TiConvert.toColor(bgColor);
+			alerter.setBackgroundColorInt(backgroundColor);
+		}
+
+		alerter.show();
 	}
 
 	@Kroll.method
 	public void hide() {
 		Alerter.hide();
-	} 
+	}
 }
-
