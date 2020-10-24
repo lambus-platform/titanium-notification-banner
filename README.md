@@ -14,8 +14,6 @@ import NotificationBanner from 'ti.notificationbanner';
 NotificationBanner.show({
   title: 'Titanium rocks!',
   duration: 2,
-  
-  // iOS only for now
   subtitle: 'It seriously does',
   backgroundColor: 'green',
 });
@@ -32,7 +30,7 @@ NotificationBanner.show({
 - `backgroundColor` (Optional)
 - `duration` (Optional)
 
-## License 
+## License
 
 MIT
 
