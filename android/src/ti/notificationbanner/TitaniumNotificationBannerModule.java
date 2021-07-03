@@ -38,7 +38,7 @@ public class TitaniumNotificationBannerModule extends KrollModule
 		int duration = args.getInt("duration");
 		String title = args.optString("title", "");
 		String subtitle = args.optString("subtitle", "");
-		String bgColor = args.optString("backgroundColor", "");
+		String backgroundColor = args.optString("backgroundColor", "");
 
 		final KrollFunction callback = (KrollFunction) args.get("onClick");
 
@@ -50,21 +50,18 @@ public class TitaniumNotificationBannerModule extends KrollModule
 		Alerter alerter = Alerter.create(currentActivity)
 			.setTitle(title)
 			.setText(subtitle)
-			.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					KrollDict dict = new KrollDict();
-					callback.call(getKrollObject(), dict);
-				}
-			});
+            .enableSwipeToDismiss()
+            .setOnClickListener(view -> {
+                KrollDict dict = new KrollDict();
+                callback.call(getKrollObject(), dict);
+            });
 
 		if (duration > 0) {
 			alerter.setDuration(duration * 1000);
 		}
 
-		if (bgColor != "") {
-			int backgroundColor = TiConvert.toColor(bgColor);
-			alerter.setBackgroundColorInt(backgroundColor);
+		if (backgroundColor != "") {
+			alerter.setBackgroundColorInt(TiConvert.toColor(backgroundColor));
 		}
 
 		alerter.show();
