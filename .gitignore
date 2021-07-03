@@ -25,13 +25,11 @@ android/clean
 android/ant_clean
 android/.classpath
 android/.settings
-android/dist/
 android/launch-*
 nbproject
 /metadata.json
 /ios/firebase.core-iphone-*.zip
 /ios/metadata.json
 /android/java-sources.txt
-/ios/dist
 /android/.gradle
 ios/Carthage
