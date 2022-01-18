@@ -4,7 +4,17 @@ A notification banner for Titanium that uses full native API's to modally presen
 
 ## Requirements
 
-- [x] Titanium 7.0.0+
+- [x] Titanium 9.0.0+
+
+## Android
+
+Add
+```
+repositories {
+    maven { url "https://jitpack.io" }
+}
+```
+to the app build.gradle file.
 
 ## Example
 
@@ -29,6 +39,7 @@ NotificationBanner.show({
 - `subtitle` (Optional)
 - `backgroundColor` (Optional)
 - `duration` (Optional)
+- `elevation` (Optional)
 
 ## License
 
