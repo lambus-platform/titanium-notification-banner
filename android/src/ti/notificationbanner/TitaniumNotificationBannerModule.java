@@ -4,9 +4,15 @@
  * Copyright (c) 2009-2018 by Appcelerator, Inc. All Rights Reserved.
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
- *
  */
 package ti.notificationbanner;
+
+import android.app.Activity;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.tapadoo.alerter.Alerter;
 
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollFunction;
@@ -14,61 +20,56 @@ import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiConfig;
-
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.util.TiConvert;
 
-import android.app.Activity;
-import android.view.View;
+@Kroll.module(name = "TitaniumNotificationBanner", id = "ti.notificationbanner")
+public class TitaniumNotificationBannerModule extends KrollModule {
+    private static final String LCAT = "TitaniumNotificationBannerModule";
+    private static final boolean DBG = TiConfig.LOGD;
 
-import com.tapadoo.alerter.Alerter;
+    // Methods
 
-@Kroll.module(name="TitaniumNotificationBanner", id="ti.notificationbanner")
-public class TitaniumNotificationBannerModule extends KrollModule
-{
-	private static final String LCAT = "TitaniumNotificationBannerModule";
-	private static final boolean DBG = TiConfig.LOGD;
-
-	// Methods
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 	@Kroll.method
-	public void show(KrollDict args)
-	{
-		Activity currentActivity = TiApplication.getAppCurrentActivity();
-		int duration = args.getInt("duration");
-		String title = args.optString("title", "");
-		String subtitle = args.optString("subtitle", "");
-		String backgroundColor = args.optString("backgroundColor", "");
+    public void show(KrollDict args) {
+        Activity currentActivity = TiApplication.getAppCurrentActivity();
+        int duration = args.getInt("duration");
+        String title = args.optString("title", "");
+        String subtitle = args.optString("subtitle", "");
+        Float elevation = Float.parseFloat(args.optString("elevation", "0.0"));
+        String backgroundColor = args.optString("backgroundColor", "");
 
-		final KrollFunction callback = (KrollFunction) args.get("onClick");
+        final KrollFunction callback = (KrollFunction) args.get("onClick");
 
-		if (currentActivity == null) {
-			Log.e(LCAT, "Cannot option current activity. Try calling this method after your window is opened");
-			return;
-		}
+        if (currentActivity == null) {
+            Log.e(LCAT, "Cannot option current activity. Try calling this method after your window is opened");
+            return;
+        }
 
-		Alerter alerter = Alerter.create(currentActivity)
-			.setTitle(title)
-			.setText(subtitle)
-            .enableSwipeToDismiss()
-            .setOnClickListener(view -> {
-                KrollDict dict = new KrollDict();
-                callback.call(getKrollObject(), dict);
-            });
+        Alerter alerter = Alerter.create(currentActivity)
+                .setTitle(title)
+                .setText(subtitle)
+                .enableSwipeToDismiss()
+                .setElevation(elevation)
+                .setOnClickListener(view -> {
+                    KrollDict dict = new KrollDict();
+                    callback.call(getKrollObject(), dict);
+                });
 
-		if (duration > 0) {
-			alerter.setDuration(duration * 1000);
-		}
+        if (duration > 0) {
+            alerter.setDuration(duration * 1000);
+        }
 
-		if (backgroundColor != "") {
-			alerter.setBackgroundColorInt(TiConvert.toColor(backgroundColor));
-		}
+        if (backgroundColor != "") {
+            alerter.setBackgroundColorInt(TiConvert.toColor(backgroundColor));
+        }
 
-		alerter.show();
-	}
+        alerter.show();
+    }
 
-	@Kroll.method
-	public void hide() {
-		Alerter.hide();
-	}
+    @Kroll.method
+    public void hide() {
+        Alerter.hide();
+    }
 }
