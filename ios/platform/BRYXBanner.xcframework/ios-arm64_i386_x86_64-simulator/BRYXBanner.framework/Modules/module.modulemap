@@ -1,0 +1,11 @@
+framework module BRYXBanner {
+  umbrella header "BRYXBanner-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module BRYXBanner.Swift {
+    header "BRYXBanner-Swift.h"
+    requires objc
+}

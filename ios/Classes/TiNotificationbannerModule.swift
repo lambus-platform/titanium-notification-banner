@@ -12,8 +12,6 @@ import TitaniumKit
 
 @objc(TiNotificationbannerModule)
 class TiNotificationbannerModule: TiModule {
-
-  public let testProperty: String = "Hello World"
   
   func moduleGUID() -> String {
     return "cccc9652-8055-43e0-a933-5cc76acd00be"
