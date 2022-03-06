@@ -53,8 +53,10 @@ public class TitaniumNotificationBannerModule extends KrollModule {
                 .enableSwipeToDismiss()
                 .setElevation(elevation)
                 .setOnClickListener(view -> {
-                    KrollDict dict = new KrollDict();
-                    callback.call(getKrollObject(), dict);
+                    if (callback != null) {
+                        KrollDict dict = new KrollDict();
+                        callback.call(getKrollObject(), dict);
+                    }
                 });
 
         if (duration > 0) {
