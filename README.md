@@ -40,6 +40,7 @@ NotificationBanner.show({
 - `backgroundColor` (Optional)
 - `duration` (Optional)
 - `elevation` (Optional)
+- `onClick`: callback function for banner click (Optional)
 
 ## License
 
