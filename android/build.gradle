@@ -3,5 +3,5 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.tapadoo:alerter:7.1.0'
+    implementation 'com.github.tapadoo:alerter:7.2.4'
 }
