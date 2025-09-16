@@ -1,20 +1,20 @@
 # Titanium Notification Banner
 
 A notification banner for Titanium that uses full native API's to modally present messages.
+Since the iOS module 5.0.0, this library uses the Swift-based [`AlertKit`](https://github.com/sparrowcode/AlertKit) library.
 
 ## Requirements
 
-- [x] Titanium 9.0.0+
+- [x] Titanium 12.7.0+
 
-## Android
+### Android
 
-Add
+Add the following to the app build.gradle file of your **app project**:
 ```
 repositories {
     maven { url "https://jitpack.io" }
 }
 ```
-to the app build.gradle file.
 
 ## Example
 
@@ -23,9 +23,10 @@ import NotificationBanner from 'ti.notificationbanner';
 
 NotificationBanner.show({
   title: 'Titanium rocks!',
-  duration: 2,
   subtitle: 'It seriously does',
-  backgroundColor: 'green',
+  type: 'success', // iOS-only
+  duration: 2, // Android-only
+  backgroundColor: 'green', // Android-only
 });
 ```
 
@@ -33,14 +34,22 @@ NotificationBanner.show({
 
 - `show(options)`
 
-## Properties
+### Method Properties
 
 - `title` (Required)
 - `subtitle` (Optional)
+
+#### Android-only
+
 - `backgroundColor` (Optional)
 - `duration` (Optional)
 - `elevation` (Optional)
 - `onClick`: callback function for banner click (Optional)
+
+#### iOS-only
+
+- `type` (Optional, one of `info`, `warning`, `error` and `success`)
+- `image` (Optional, set the icon of the banner)
 
 ## License
 

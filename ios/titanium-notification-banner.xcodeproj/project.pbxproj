@@ -3,12 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A7118D12E76EB2C008F6EF4 /* AlertKitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118CE2E76EB2C008F6EF4 /* AlertKitAPI.swift */; };
+		3A7118D22E76EB2C008F6EF4 /* AlertSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C52E76EB2C008F6EF4 /* AlertSpinnerView.swift */; };
+		3A7118D32E76EB2C008F6EF4 /* AlertViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118CA2E76EB2C008F6EF4 /* AlertViewProtocol.swift */; };
+		3A7118D42E76EB2C008F6EF4 /* AlertAppleMusic17View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C82E76EB2C008F6EF4 /* AlertAppleMusic17View.swift */; };
+		3A7118D52E76EB2C008F6EF4 /* AlertAppleMusic16View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C72E76EB2C008F6EF4 /* AlertAppleMusic16View.swift */; };
+		3A7118D62E76EB2C008F6EF4 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C02E76EB2C008F6EF4 /* UILabelExtension.swift */; };
+		3A7118D72E76EB2C008F6EF4 /* AlertIconErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C32E76EB2C008F6EF4 /* AlertIconErrorView.swift */; };
+		3A7118D82E76EB2C008F6EF4 /* AlertViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118CF2E76EB2C008F6EF4 /* AlertViewStyle.swift */; };
+		3A7118D92E76EB2C008F6EF4 /* AlertIconHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C42E76EB2C008F6EF4 /* AlertIconHeartView.swift */; };
+		3A7118DA2E76EB2C008F6EF4 /* AlertIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118CD2E76EB2C008F6EF4 /* AlertIcon.swift */; };
+		3A7118DB2E76EB2C008F6EF4 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118BF2E76EB2C008F6EF4 /* UIFontExtension.swift */; };
+		3A7118DC2E76EB2C008F6EF4 /* SwiftUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118BE2E76EB2C008F6EF4 /* SwiftUIExtension.swift */; };
+		3A7118DD2E76EB2C008F6EF4 /* AlertHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118CC2E76EB2C008F6EF4 /* AlertHaptic.swift */; };
+		3A7118DE2E76EB2C008F6EF4 /* AlertViewInternalDismissProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C92E76EB2C008F6EF4 /* AlertViewInternalDismissProtocol.swift */; };
+		3A7118DF2E76EB2C008F6EF4 /* AlertIconDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7118C22E76EB2C008F6EF4 /* AlertIconDoneView.swift */; };
 		3A8448C827CAA9AC008DD61D /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8448C727CAA9AC008DD61D /* TitaniumKit.xcframework */; };
-		3ABD08DF27CAA7E4008F6CF1 /* BRYXBanner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABD08DE27CAA7E4008F6CF1 /* BRYXBanner.xcframework */; };
 		DB34CDE0207B998A005F8E8C /* TiNotificationbannerModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* TiNotificationbannerModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* TiNotificationbannerModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* TiNotificationbannerModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB34CDE5207B9EBD005F8E8C /* Foundation.framework */; };
@@ -18,8 +32,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A7118BE2E76EB2C008F6EF4 /* SwiftUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtension.swift; sourceTree = "<group>"; };
+		3A7118BF2E76EB2C008F6EF4 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		3A7118C02E76EB2C008F6EF4 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		3A7118C22E76EB2C008F6EF4 /* AlertIconDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIconDoneView.swift; sourceTree = "<group>"; };
+		3A7118C32E76EB2C008F6EF4 /* AlertIconErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIconErrorView.swift; sourceTree = "<group>"; };
+		3A7118C42E76EB2C008F6EF4 /* AlertIconHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIconHeartView.swift; sourceTree = "<group>"; };
+		3A7118C52E76EB2C008F6EF4 /* AlertSpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSpinnerView.swift; sourceTree = "<group>"; };
+		3A7118C72E76EB2C008F6EF4 /* AlertAppleMusic16View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAppleMusic16View.swift; sourceTree = "<group>"; };
+		3A7118C82E76EB2C008F6EF4 /* AlertAppleMusic17View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAppleMusic17View.swift; sourceTree = "<group>"; };
+		3A7118C92E76EB2C008F6EF4 /* AlertViewInternalDismissProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInternalDismissProtocol.swift; sourceTree = "<group>"; };
+		3A7118CA2E76EB2C008F6EF4 /* AlertViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewProtocol.swift; sourceTree = "<group>"; };
+		3A7118CC2E76EB2C008F6EF4 /* AlertHaptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHaptic.swift; sourceTree = "<group>"; };
+		3A7118CD2E76EB2C008F6EF4 /* AlertIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIcon.swift; sourceTree = "<group>"; };
+		3A7118CE2E76EB2C008F6EF4 /* AlertKitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertKitAPI.swift; sourceTree = "<group>"; };
+		3A7118CF2E76EB2C008F6EF4 /* AlertViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewStyle.swift; sourceTree = "<group>"; };
 		3A8448C727CAA9AC008DD61D /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<group>"; };
-		3ABD08DE27CAA7E4008F6CF1 /* BRYXBanner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BRYXBanner.xcframework; path = platform/BRYXBanner.xcframework; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiNotificationbannerModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiNotificationbannerModuleAssets.m; path = Classes/TiNotificationbannerModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* TiNotificationbannerModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiNotificationbannerModuleAssets.h; path = Classes/TiNotificationbannerModuleAssets.h; sourceTree = SOURCE_ROOT; };
 		DB34CDE5207B9EBD005F8E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,7 +65,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8448C827CAA9AC008DD61D /* TitaniumKit.xcframework in Frameworks */,
-				3ABD08DF27CAA7E4008F6CF1 /* BRYXBanner.xcframework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +72,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A7118C12E76EB2C008F6EF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A7118BE2E76EB2C008F6EF4 /* SwiftUIExtension.swift */,
+				3A7118BF2E76EB2C008F6EF4 /* UIFontExtension.swift */,
+				3A7118C02E76EB2C008F6EF4 /* UILabelExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3A7118C62E76EB2C008F6EF4 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3A7118C22E76EB2C008F6EF4 /* AlertIconDoneView.swift */,
+				3A7118C32E76EB2C008F6EF4 /* AlertIconErrorView.swift */,
+				3A7118C42E76EB2C008F6EF4 /* AlertIconHeartView.swift */,
+				3A7118C52E76EB2C008F6EF4 /* AlertSpinnerView.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		3A7118CB2E76EB2C008F6EF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A7118C72E76EB2C008F6EF4 /* AlertAppleMusic16View.swift */,
+				3A7118C82E76EB2C008F6EF4 /* AlertAppleMusic17View.swift */,
+				3A7118C92E76EB2C008F6EF4 /* AlertViewInternalDismissProtocol.swift */,
+				3A7118CA2E76EB2C008F6EF4 /* AlertViewProtocol.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A7118D02E76EB2C008F6EF4 /* AlertKit */ = {
+			isa = PBXGroup;
+			children = (
+				3A7118C12E76EB2C008F6EF4 /* Extensions */,
+				3A7118C62E76EB2C008F6EF4 /* Icons */,
+				3A7118CB2E76EB2C008F6EF4 /* Views */,
+				3A7118CC2E76EB2C008F6EF4 /* AlertHaptic.swift */,
+				3A7118CD2E76EB2C008F6EF4 /* AlertIcon.swift */,
+				3A7118CE2E76EB2C008F6EF4 /* AlertKitAPI.swift */,
+				3A7118CF2E76EB2C008F6EF4 /* AlertViewStyle.swift */,
+			);
+			name = AlertKit;
+			path = Classes/AlertKit;
+			sourceTree = "<group>";
+		};
 		DB258CA41F0964DE000D0D8D /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +135,7 @@
 		DB258CA51F0964F6000D0D8D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3A7118D02E76EB2C008F6EF4 /* AlertKit */,
 				DB52E2421E9CD0F800AAAEE0 /* TiNotificationbannerModule.swift */,
 			);
 			name = Sources;
@@ -70,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				3A8448C727CAA9AC008DD61D /* TitaniumKit.xcframework */,
-				3ABD08DE27CAA7E4008F6CF1 /* BRYXBanner.xcframework */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -185,6 +259,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7118D12E76EB2C008F6EF4 /* AlertKitAPI.swift in Sources */,
+				3A7118D22E76EB2C008F6EF4 /* AlertSpinnerView.swift in Sources */,
+				3A7118D32E76EB2C008F6EF4 /* AlertViewProtocol.swift in Sources */,
+				3A7118D42E76EB2C008F6EF4 /* AlertAppleMusic17View.swift in Sources */,
+				3A7118D52E76EB2C008F6EF4 /* AlertAppleMusic16View.swift in Sources */,
+				3A7118D62E76EB2C008F6EF4 /* UILabelExtension.swift in Sources */,
+				3A7118D72E76EB2C008F6EF4 /* AlertIconErrorView.swift in Sources */,
+				3A7118D82E76EB2C008F6EF4 /* AlertViewStyle.swift in Sources */,
+				3A7118D92E76EB2C008F6EF4 /* AlertIconHeartView.swift in Sources */,
+				3A7118DA2E76EB2C008F6EF4 /* AlertIcon.swift in Sources */,
+				3A7118DB2E76EB2C008F6EF4 /* UIFontExtension.swift in Sources */,
+				3A7118DC2E76EB2C008F6EF4 /* SwiftUIExtension.swift in Sources */,
+				3A7118DD2E76EB2C008F6EF4 /* AlertHaptic.swift in Sources */,
+				3A7118DE2E76EB2C008F6EF4 /* AlertViewInternalDismissProtocol.swift in Sources */,
+				3A7118DF2E76EB2C008F6EF4 /* AlertIconDoneView.swift in Sources */,
 				DB34CDE0207B998A005F8E8C /* TiNotificationbannerModuleAssets.m in Sources */,
 				DB52E2431E9CD0F800AAAEE0 /* TiNotificationbannerModule.swift in Sources */,
 			);
@@ -255,7 +344,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -317,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -353,7 +442,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,7 +491,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
