@@ -22,6 +22,7 @@ xcuserdata
 libs/
 
 android/clean
+android/dist
 android/ant_clean
 android/.classpath
 android/.settings
